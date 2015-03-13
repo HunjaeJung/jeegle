@@ -6,3 +6,9 @@
 
 meteor-platform
 iron:router
+ian:bootstrap-3
+jquery
+cfs:standard-packages
+cfs:gridfs
+aldeed:simple-schema
+aldeed:collection2
