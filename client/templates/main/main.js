@@ -24,19 +24,53 @@ Template.main.rendered = function() {
             w240: {
                 rows: 2,
                 columns: 4
-            }
+            },
+            preventClick: false
         });
+
+        resizeMainImage();
     });
 
-    resizeMainImage();
+    function resizeMainImage() {
+        $("#main-image").height($(window).height() - $("#image-gallery").height());
+        $("#main-image").height(500);
+        $("#main-image").width($(window).width());
+    }
+
+    $('#input_text').focus();
 
     $(window).resize(function() {
         resizeMainImage();
     });
 
-    function resizeMainImage() {
-        console.log($(window).height(), $(window).width(), $("#image-gallery").height());
-        $("#main-image").height($(window).height() - $("#image-gallery").height());
-        $("#main-image").width($(window).width());
+    document.onkeypress = function (e) {
+        $('#input_text').focus();
+    };
+
+    jeegle.init();
+}
+
+var jeegle = {
+    _cacheElement : {
+
+    },
+
+    init : function() {
+        this.addEventListener();
+    },
+
+    addEventListener : function() {
+        jeegle.actionSelectBgImageItem();
+    },
+
+    actionSelectBgImageItem : function() {
+        $('#image-gallery').on('click' , 'li', function(e) {
+            e.preventDefault();
+
+            var bg = $(this.childNodes[0]).css('background-image');
+//            bg = bg.replace('url(','').replace(')','');
+//            $("#main-image").css('background-image',  'url(' + bg + ')');
+            $("#main-image").css('background-image',  bg);
+        });
     }
 }
