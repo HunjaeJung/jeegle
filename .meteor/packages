@@ -13,3 +13,6 @@ cfs:gridfs
 aldeed:simple-schema
 aldeed:collection2
 bootstrap
+fourseven:scss
+matteodem:easy-search
+dburles:factory

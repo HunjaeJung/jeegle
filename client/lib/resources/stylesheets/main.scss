@@ -1,0 +1,22 @@
+// .container {
+// 	margin: 0;
+// 	padding: 0;
+// }
+
+#image-gallery {
+    margin: 0 auto;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+#main-image {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+}
+
+.no-gutter {
+	margin: 0;
+}
