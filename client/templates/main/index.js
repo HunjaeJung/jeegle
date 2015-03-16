@@ -1,4 +1,4 @@
-Template.main.rendered = function() {
+Template.index.rendered = function() {
     $(function() {
         $('#image-gallery').gridrotator({
             rows: 2,
@@ -37,51 +37,68 @@ Template.main.rendered = function() {
         $("#main-image").width($(window).width());
     }
 
-    $('#input_text').focus();
+    $('#main-page-input').focus();
 
     $(window).resize(function() {
         resizeMainImage();
     });
 
-    document.onkeypress = function (e) {
-        $('#input_text').focus();
+    document.onkeypress = function(e) {
+        $('#main-page-input').focus();
     };
 
     jeegle.init();
-}
 
-Template.main.events = {
-    "keyup #input_text": function(evt, template){
-        if(evt.which==13){
-            //input value를 python으로 보내고, 문장 중 명사를 return 받습니다.
 
-        }
+    // for indexing & easy search
+
+    // var instance = EasySearch.getComponentInstance({
+    //     index: 'Images'
+    // });
+
+    // instance.on('currentValue', function(val) {
+
+    // });
+
+    // instance.on('searchingDone', function(searchingIsDone) {
+    //     console.log("searcingisdone", searchingIsDone);
+    // });
+};
+
+Template.index.events({
+    "keyup #main-page-input": function(event, template) {
+        // Session.set("query", event.currentTarget.value);
+        // EasySearch.getComponentInstance({
+        //     index: 'Images'
+        // }).search(event.currentTarget.value);
     }
-}
+});
+
+Template.index.helpers({
+
+});
 
 var jeegle = {
-    _cacheElement : {
+    _cacheElement: {
 
     },
 
-    init : function() {
+    init: function() {
         this.addEventListener();
     },
 
-    addEventListener : function() {
+    addEventListener: function() {
         jeegle.actionSelectBgImageItem();
     },
 
-    actionSelectBgImageItem : function() {
-        $('#image-gallery').on('click' , 'li', function(e) {
+    actionSelectBgImageItem: function() {
+        $('#image-gallery').on('click', 'li', function(e) {
             e.preventDefault();
 
             var bg = $(this.childNodes[0]).css('background-image');
-//            bg = bg.replace('url(','').replace(')','');
-//            $("#main-image").css('background-image',  'url(' + bg + ')');
-            $("#main-image").css('background-image',  bg);
+            // bg = bg.replace('url(','').replace(')','');
+            // $("#main-image").css('background-image',  'url(' + bg + ')');
+            $("#main-image").css('background-image', bg);
         });
     }
 }
-
-
