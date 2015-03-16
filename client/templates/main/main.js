@@ -50,6 +50,15 @@ Template.main.rendered = function() {
     jeegle.init();
 }
 
+Template.main.events = {
+    "keyup #input_text": function(evt, template){
+        if(evt.which==13){
+            //input value를 python으로 보내고, 문장 중 명사를 return 받습니다.
+
+        }
+    }
+}
+
 var jeegle = {
     _cacheElement : {
 
@@ -74,3 +83,5 @@ var jeegle = {
         });
     }
 }
+
+
