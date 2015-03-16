@@ -40,3 +40,14 @@ Template.main.rendered = function() {
         $("#main-image").width($(window).width());
     }
 }
+
+Template.main.events = {
+    "keyup #input_text": function(evt, template){
+        console.log(evt.currentTarget.value);
+        console.log(evt.which);
+        if(evt.which==13){
+            //input value를 python으로 보내고, 문장 중 명사를 return 받습니다.
+
+        }
+    }
+}
