@@ -12,3 +12,4 @@ cfs:standard-packages
 cfs:gridfs
 aldeed:simple-schema
 aldeed:collection2
+bootstrap

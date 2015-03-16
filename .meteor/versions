@@ -7,6 +7,7 @@ binary-heap@1.0.2
 blaze@2.0.4
 blaze-tools@1.0.2
 boilerplate-generator@1.0.2
+bootstrap@1.0.1
 callback-hook@1.0.2
 cfs:access-point@0.1.44
 cfs:base-package@0.0.28
