@@ -48,29 +48,11 @@ Template.index.rendered = function() {
     };
 
     jeegle.init();
-
-
-    // for indexing & easy search
-
-    // var instance = EasySearch.getComponentInstance({
-    //     index: 'Images'
-    // });
-
-    // instance.on('currentValue', function(val) {
-
-    // });
-
-    // instance.on('searchingDone', function(searchingIsDone) {
-    //     console.log("searcingisdone", searchingIsDone);
-    // });
 };
 
 Template.index.events({
     "keyup #main-page-input": function(event, template) {
-        // Session.set("query", event.currentTarget.value);
-        // EasySearch.getComponentInstance({
-        //     index: 'Images'
-        // }).search(event.currentTarget.value);
+        Session.set("query", event.currentTarget.value);
     }
 });
 
